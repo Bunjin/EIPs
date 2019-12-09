@@ -98,25 +98,33 @@ We should later develop wallet tools that would allow an user to properly fund h
 `decrease major dwarf chase wear duck trust vital three slot clump clip voyage bid kind achieve cruel garden guitar magnet crater destroy strategy extend`
 
 Agnostic Personas(private keys in base 16):
-| path | private key                                                               |
-|------|--------------------------------------------------------------------------|
+| path      | private key                                                        |
+|-----------|--------------------------------------------------------------------|
 | m/101'/0	|	0x2f88edf4b959dbe6cc8be9ce2f25db8bd3706fa80342442853c8eb1efc76543f |
 | m/101'/1  |	0xd606accfd1c46b7f6a20407533663b2e3585e927a56c51e804233e0d28125d0b |
 | m/101'/2	|	0x4aaf427f33c2c19471003f34acf83c48d5fdab355b967a5b2a8c0e3ab428ffe6 |
 
 As Bitcoin accounts (private keys in base 52):
-| path | address | public key | private key |
-|------|----------|------------|-------------|
-| m/101'/0 |	1FTiNGTKUWRvbu4MFhBHDLuaWsmuCA4q3o |	0x03e47370f983164e2817bef9beb932c3574098d529aeae8b2b03efc60c0f3301d9 |	Kxp7UdW6Jn4A4cDuCxWS2x2xh2rmdwtnKrKQhYwukvxvjNQk1zVq |
-| m/101'/1 |	19sRPE9YTyjoQQ4hedgfL3hb4UPc5MTHAa |	0x02d8a8833b7565d089fc3df88a06ddc9303495bc92f601ffc81c2d6e41dd7d258c |	L4PkRv3KxeSfGrYobLNQqjit4NapuoVikyAywLBBHEhWJzVe8Lwo |
-| m/101'/2 |	1CMBTh1o712E9fmXtN5Fb5xKJ3EvBtGqa1 |	0x038841447982c5ade980056fb83cabed9d57ee98fd25552c9eafe5bb9fe1ad0e93 |	KyitTVF4PYpep14uoLUZ2HLarDdXCun12ZzgMtYpLDbXomJnLtB1 |
+| path     | address                            | public key                                                           | private key                                          |
+|----------|------------------------------------|----------------------------------------------------------------------|------------------------------------------------------|
+| m/101'/0 | 1FTiNGTKUWRvbu4MFhBHDLuaWsmuCA4q3o | 0x03e47370f983164e2817bef9beb932c3574098d529aeae8b2b03efc60c0f3301d9 | Kxp7UdW6Jn4A4cDuCxWS2x2xh2rmdwtnKrKQhYwukvxvjNQk1zVq |
+| m/101'/1 | 19sRPE9YTyjoQQ4hedgfL3hb4UPc5MTHAa | 0x02d8a8833b7565d089fc3df88a06ddc9303495bc92f601ffc81c2d6e41dd7d258c | L4PkRv3KxeSfGrYobLNQqjit4NapuoVikyAywLBBHEhWJzVe8Lwo |
+| m/101'/2 | 1CMBTh1o712E9fmXtN5Fb5xKJ3EvBtGqa1 | 0x038841447982c5ade980056fb83cabed9d57ee98fd25552c9eafe5bb9fe1ad0e93 | KyitTVF4PYpep14uoLUZ2HLarDdXCun12ZzgMtYpLDbXomJnLtB1 |
 
 As Ethereum accounts (private keys in base 16):
-| path | address | public key | private key |
-|------|----------|------------|-------------|
-| m/101'/0 |	0x0AA2cBbC8b7FE4d209bf67a3B29aBB79AC69Bdb7 |	0x03e47370f983164e2817bef9beb932c3574098d529aeae8b2b03efc60c0f3301d9 |	0x2f88edf4b959dbe6cc8be9ce2f25db8bd3706fa80342442853c8eb1efc76543f |
-| m/101'/1 |	0x284DAce36273D794c70727f63a04c62687513A85 |	0x02d8a8833b7565d089fc3df88a06ddc9303495bc92f601ffc81c2d6e41dd7d258c |	0xd606accfd1c46b7f6a20407533663b2e3585e927a56c51e804233e0d28125d0b |
-| m/101'/2 |	0x6938Fe11F61C438f2e1c822C64833201c3c4A106 |	0x038841447982c5ade980056fb83cabed9d57ee98fd25552c9eafe5bb9fe1ad0e93 |	0x4aaf427f33c2c19471003f34acf83c48d5fdab355b967a5b2a8c0e3ab428ffe6 |
+
+| path     | address                            | public key                                                           | private key                                          |
+|----------|------------------------------------|----------------------------------------------------------------------|------------------------------------------------------|
+| m/101'/0 | 1FTiNGTKUWRvbu4MFhBHDLuaWsmuCA4q3o | 0x03e47370f983164e2817bef9beb932c3574098d529aeae8b2b03efc60c0f3301d9 | Kxp7UdW6Jn4A4cDuCxWS2x2xh2rmdwtnKrKQhYwukvxvjNQk1zVq |
+| m/101'/1 | 19sRPE9YTyjoQQ4hedgfL3hb4UPc5MTHAa | 0x02d8a8833b7565d089fc3df88a06ddc9303495bc92f601ffc81c2d6e41dd7d258c | L4PkRv3KxeSfGrYobLNQqjit4NapuoVikyAywLBBHEhWJzVe8Lwo |
+| m/101'/2 | 1CMBTh1o712E9fmXtN5Fb5xKJ3EvBtGqa1 | 0x038841447982c5ade980056fb83cabed9d57ee98fd25552c9eafe5bb9fe1ad0e93 | KyitTVF4PYpep14uoLUZ2HLarDdXCun12ZzgMtYpLDbXomJnLtB1 |
+
+
+| path     | address                                    | public key                                                           | private key                                                        |
+|----------|--------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------|
+| m/101'/0 | 0x0AA2cBbC8b7FE4d209bf67a3B29aBB79AC69Bdb7 | 0x03e47370f983164e2817bef9beb932c3574098d529aeae8b2b03efc60c0f3301d9 | 0x2f88edf4b959dbe6cc8be9ce2f25db8bd3706fa80342442853c8eb1efc76543f |
+| m/101'/1 | 0x284DAce36273D794c70727f63a04c62687513A85 | 0x02d8a8833b7565d089fc3df88a06ddc9303495bc92f601ffc81c2d6e41dd7d258c | 0xd606accfd1c46b7f6a20407533663b2e3585e927a56c51e804233e0d28125d0b |
+| m/101'/2 | 0x6938Fe11F61C438f2e1c822C64833201c3c4A106 | 0x038841447982c5ade980056fb83cabed9d57ee98fd25552c9eafe5bb9fe1ad0e93 | 0x4aaf427f33c2c19471003f34acf83c48d5fdab355b967a5b2a8c0e3ab428ffe6 |
 
 ## Backwards Compatibility
 <!--All EIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The EIP must explain how the author proposes to deal with these incompatibilities. EIP submissions without a sufficient backwards compatibility treatise may be rejected outright.-->
