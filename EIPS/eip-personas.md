@@ -95,9 +95,11 @@ We should later develop wallet tools that would allow an user to properly fund h
 ### Example derivation of persona accounts:
 
 24 words seed:
+
 `decrease major dwarf chase wear duck trust vital three slot clump clip voyage bid kind achieve cruel garden guitar magnet crater destroy strategy extend`
 
 Agnostic Personas(private keys in base 16):
+
 | path     | private key                                                        |
 |----------|--------------------------------------------------------------------|
 | m/101'/0 | 0x2f88edf4b959dbe6cc8be9ce2f25db8bd3706fa80342442853c8eb1efc76543f |
@@ -113,9 +115,6 @@ As Bitcoin accounts (private keys in base 52):
 | m/101'/2 | 1CMBTh1o712E9fmXtN5Fb5xKJ3EvBtGqa1 | 0x038841447982c5ade980056fb83cabed9d57ee98fd25552c9eafe5bb9fe1ad0e93 | KyitTVF4PYpep14uoLUZ2HLarDdXCun12ZzgMtYpLDbXomJnLtB1 |
 
 As Ethereum accounts (private keys in base 16):
-
-
-
 
 | path     | address                                    | public key                                                           | private key                                                        |
 |----------|--------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------|
