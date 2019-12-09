@@ -98,11 +98,11 @@ We should later develop wallet tools that would allow an user to properly fund h
 `decrease major dwarf chase wear duck trust vital three slot clump clip voyage bid kind achieve cruel garden guitar magnet crater destroy strategy extend`
 
 Agnostic Personas(private keys in base 16):
-| path      | private key                                                        |
-|-----------|--------------------------------------------------------------------|
-| m/101'/0	|	0x2f88edf4b959dbe6cc8be9ce2f25db8bd3706fa80342442853c8eb1efc76543f |
-| m/101'/1  |	0xd606accfd1c46b7f6a20407533663b2e3585e927a56c51e804233e0d28125d0b |
-| m/101'/2	|	0x4aaf427f33c2c19471003f34acf83c48d5fdab355b967a5b2a8c0e3ab428ffe6 |
+| path     | private key                                                        |
+|----------|--------------------------------------------------------------------|
+| m/101'/0 | 0x2f88edf4b959dbe6cc8be9ce2f25db8bd3706fa80342442853c8eb1efc76543f |
+| m/101'/1 | 0xd606accfd1c46b7f6a20407533663b2e3585e927a56c51e804233e0d28125d0b |
+| m/101'/2 | 0x4aaf427f33c2c19471003f34acf83c48d5fdab355b967a5b2a8c0e3ab428ffe6 |
 
 As Bitcoin accounts (private keys in base 52):
 
