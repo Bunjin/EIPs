@@ -105,6 +105,7 @@ Agnostic Personas(private keys in base 16):
 | m/101'/2	|	0x4aaf427f33c2c19471003f34acf83c48d5fdab355b967a5b2a8c0e3ab428ffe6 |
 
 As Bitcoin accounts (private keys in base 52):
+
 | path     | address                            | public key                                                           | private key                                          |
 |----------|------------------------------------|----------------------------------------------------------------------|------------------------------------------------------|
 | m/101'/0 | 1FTiNGTKUWRvbu4MFhBHDLuaWsmuCA4q3o | 0x03e47370f983164e2817bef9beb932c3574098d529aeae8b2b03efc60c0f3301d9 | Kxp7UdW6Jn4A4cDuCxWS2x2xh2rmdwtnKrKQhYwukvxvjNQk1zVq |
@@ -113,11 +114,7 @@ As Bitcoin accounts (private keys in base 52):
 
 As Ethereum accounts (private keys in base 16):
 
-| path     | address                            | public key                                                           | private key                                          |
-|----------|------------------------------------|----------------------------------------------------------------------|------------------------------------------------------|
-| m/101'/0 | 1FTiNGTKUWRvbu4MFhBHDLuaWsmuCA4q3o | 0x03e47370f983164e2817bef9beb932c3574098d529aeae8b2b03efc60c0f3301d9 | Kxp7UdW6Jn4A4cDuCxWS2x2xh2rmdwtnKrKQhYwukvxvjNQk1zVq |
-| m/101'/1 | 19sRPE9YTyjoQQ4hedgfL3hb4UPc5MTHAa | 0x02d8a8833b7565d089fc3df88a06ddc9303495bc92f601ffc81c2d6e41dd7d258c | L4PkRv3KxeSfGrYobLNQqjit4NapuoVikyAywLBBHEhWJzVe8Lwo |
-| m/101'/2 | 1CMBTh1o712E9fmXtN5Fb5xKJ3EvBtGqa1 | 0x038841447982c5ade980056fb83cabed9d57ee98fd25552c9eafe5bb9fe1ad0e93 | KyitTVF4PYpep14uoLUZ2HLarDdXCun12ZzgMtYpLDbXomJnLtB1 |
+
 
 
 | path     | address                                    | public key                                                           | private key                                                        |
