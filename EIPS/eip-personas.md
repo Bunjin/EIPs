@@ -19,14 +19,14 @@ In this EIP we define the concept of personas, a new type of account, and propos
 
 ## Motivation
 <!--The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.-->
-EIP 1775 introduced the concept of personas: cryptographic keys (or accounts) that can be used as identities specific to an application (defined based on their origins), and aimed at being separated (non correlatable) from one to another. In contrast, in this proposal we define a _persona_ to be a collection of keys that are intended to be associated, for the purpose of simplifying the user's mental model of managing many keys for many protocols in situations where the set of keys are presumed to be associated by any external observer.
+EIP 1775 introduced the concept of personas: cryptographic keys (or accounts) that can be used as identities used to interact with an application (and generate its application key based on its origin) and aimed at being separated (non correlatable) from one to another. Here we further define the concept of personas and propose a standard to derive them.
+
+
 
 ## Specification
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (go-ethereum, parity, cpp-ethereum, ethereumj, ethereumjs, and [others](https://github.com/ethereum/wiki/wiki/Clients)).-->
 
-While the usual SLIP44 standard leaves the `account_index` field as a per-protocol number, a `persona` index is intended to generate the keys for many protocols, with the assumption that these accounts will generally be regarded as associated under the parent persona.
-
-A persona can be thought of as a facet of a user's identity. From the outside, a persona is observable as a single actor. A persona may have many keys associated with it, and may operate on many protocols. It can be used to perform cryptographic operations directly, or used to generate new keys (such as EIP1775 app keys) to delegate operations to external agents.
+Personas can be thought of as an identities or a masks an user can use to interact with applications without being able to be traced across these identities. A persona may have many keys associated with it, and may operate on many protocols. It can be used to perform cryptographic operations directly, or used to generate new keys (such as EIP1775 app keys) to delegate operations to external agents.
 
 ### Personas as fundamental identity accounts
 These fundamental accounts, personas, are cryptocurrency and protocol agnostic (protocols include non currency or blockchain related cryptography such as chats, databases or anything requiring user-side 256 bit cryptography). Indeed these personas could exist outside of any protocol, and more importantly, they are not subject to any given protocol, but rather theoretically pre-exist them.
