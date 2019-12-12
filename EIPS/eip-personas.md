@@ -105,25 +105,6 @@ For that we need to survey not only the blockchain protocol operations such as e
 Note that the measure of correlation should be a non binary one. 
 b) Allowing to store and export the list of persona / protocol accounts correlation
 
-[temporary]
-
-references on tracing accounts:
-
-Tracing Transactions Across Cryptocurrency Ledgers
-https://smeiklej.com/files/usenix19.pdf
-
-https://medium.com/trm-insights/how-we-used-machine-learning-to-label-one-million-ethereum-addresses-e69c96a841b9
-
-https://towardsdatascience.com/clustering-ethereum-addresses-18aeca61919d
-
-http://cs229.stanford.edu/proj2017/final-reports/5244232.pdf
-https://caprehab.nl/medium/clustering-ethereum-addresses/
-
-https://arxiv.org/pdf/1709.02489.pdf
-
-https://www.scss.tcd.ie/publications/theses/diss/2018/TCD-SCSS-DISSERTATION-2018-027.pdf
-[temporary]
-
 
 ### Example derivation of persona accounts:
 
