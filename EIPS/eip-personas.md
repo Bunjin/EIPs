@@ -21,12 +21,10 @@ In this EIP we define the concept of personas, a new type of account, and propos
 <!--The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.-->
 EIP 1775 introduced the concept of personas: cryptographic keys (or accounts) that can be used as identities used to interact with an application (and generate its application key based on its origin) and aimed at being separated (non correlatable) from one to another. Here we further define the concept of personas and propose a standard to derive them.
 
-
-
 ## Specification
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (go-ethereum, parity, cpp-ethereum, ethereumj, ethereumjs, and [others](https://github.com/ethereum/wiki/wiki/Clients)).-->
 
-Personas can be thought of as identities or masks an user can use to interact with applications without being able to be traced across these identities. A persona may have many keys associated with it, and may operate on many protocols. It can be used to perform cryptographic operations directly, or used to generate new keys (such as EIP1775 app keys) to delegate operations to external agents.
+Personas can be thought of as identities, profiles, or masks an user can use to interact with applications and attempting to not being traced across these identities by the application itself or any other observer. A persona is it itself a cryptographic key (or account) but by extension since it refers to an user identity it also designates a set of accounts or keys and  may operate on many protocols. It can be used to perform cryptographic operations directly, or used to generate new keys (such as EIP1775 app keys) to delegate operations to external agents.
 
 ### Personas as fundamental identity accounts
 These fundamental accounts, personas, are cryptocurrency and protocol agnostic (protocols include non currency or blockchain related cryptography such as chats, databases or anything requiring user-side 256 bit cryptography). Indeed these personas could exist outside of any protocol, and more importantly, they are not subject to any given protocol, but rather theoretically pre-exist them.
