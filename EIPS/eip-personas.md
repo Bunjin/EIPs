@@ -24,15 +24,17 @@ EIP 1775 introduced the concept of personas: cryptographic keys (or accounts) th
 ## Specification
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (go-ethereum, parity, cpp-ethereum, ethereumj, ethereumjs, and [others](https://github.com/ethereum/wiki/wiki/Clients)).-->
 
-Personas can be thought of as identities, profiles, or masks an user can use to interact with applications and attempting to not being traced across these identities by the application itself or any other observer. A persona is it itself a cryptographic key (or account) but by extension since it refers to an user identity it also designates a set of accounts or keys and  may operate on many protocols. It can be used to perform cryptographic operations directly, or used to generate new keys (such as EIP1775 app keys) to delegate operations to external agents.
+Personas can be thought of as identities, profiles, or masks an user can use to interact with applications and attempting to not being traced across these identities by the application itself or any other observer. A persona is it itself a cryptographic key (or account). The persona key can be used to perform cryptographic operations directly, or used to generate new keys (such as EIP1775 app keys) to delegate operations to external agents. Therefore, by extension, since it refers to an user identity, it also designates the set of accounts or keys associated (correlatable) to this identity and may operate on many protocols.
 
 ### Personas as fundamental identity accounts
+
 These fundamental accounts, personas, are cryptocurrency and protocol agnostic (protocols include non currency or blockchain related cryptography such as chats, databases or anything requiring user-side 256 bit cryptography). Indeed these personas could exist outside of any protocol, and more importantly, they are not subject to any given protocol, but rather theoretically pre-exist them.
 They could also be used outside of EIP1775 as fundamental keys used to perform fundamental identity related cryptographic operations.
 
 A persona key could be any 256 bit key. EIP1775 requires a private keys to generate its application keys, and can be generated from any private key. If personas are used directly to perform standardized signing operations, a specification for signing and generating public keys will have to be provided, but it does not need to be tied to a unique protocol. Thus, persona keys are not restricted to any cryptographic specification (such as Bitcoin or Ethereum secp256k1 Elliptic Curve Digital Signing Algorithm - ECDSA) for the generation of public keys, addresses and the signing operations.
 
 ### Using Hierarchical Deterministic specification in an cryptocurrency agnostic manner
+
 We propose to use the BIP32 Hierarchical Deterministic specification since it is a commonly used clean framework with interesting properties for generating (extended or non extended) private / public key pairs. Even if this specification originates from the secp256k1 ECDSA world of Bitcoin, it can be used in a cryptographically agnostic fashion.
 
 However we don't want to use the same path as any existing protocol keys, such as SLIP44 paths, because using a given protocol's accounts (such as Ethereum keys) as personas roots would be incompatible with the protocol-agnostic nature of the persona keys and could lead to confusion and dangers, such as the inability to transfer an Ethereum key without transferring all of that persona's other keys, but not vice versa.
@@ -81,11 +83,45 @@ Regarding the ability to use the persona keys directly (instead of using applica
 Note that the BIP32 specification (since it was originally designed for cryptocurrency) de facto implies secp1k ECDSA cryptography for the public keys derivation part. However, since we mostly care about private keys for personas (for now), persona keys defined in the manner defined in this proposal will not necessarly be restricted to use secp1k ECDSA cryptography in the future (it would allow for any 256 bits private keys digital signature algorithm, such as non secp1k ones such as Zk-starks among others).
 While generating child private keys from the parent private key in the same way as BIP32, the public keys can be generated in alternative ways, for instance using other elliptic curve parameters. The alternate ways to secp1k ECDSA will not necessarily preserve the ability to compute public child keys from a non hardened parent public extended key. However, we can still derive their private keys using HD trees and benefit from the englobing cleaness and standardization of this framework.
 
-### Personas should not be correlatable
+### Personas are intented to be not correlatable
 
 Personas are designed to be kept separate, and to offer the possibility of privacy between personas. Note that this is an intention, yet true unability to correlate personas would depend on usage of each of the protocols. Some protocol operations are privacy preserving, yet today sending funds on most cryptocurrencies isn't.
+
 Indeed the funding trail is something that can to different extents correlate personas together and reduce the benefit of using distinct personas. If, for instance, one uses the same Ethereum account (or different but correlatable accounts) to fund two distinct persona generated accounts, then these two personas would not preserve non-correlated privacy. With analytical tools, an application could be able to relate these two personas and know that there is a single user behind them.
+
 We (both as proposers and community members) should proceed to develop wallet tools that allow a user to more privately fund distinct personas in a non correlatable way, and even allow for private methods of funding personas. These tools could include privacy preserving ways of transferring cryptocurrency (eg. Mixers, Zk-snarks...), and analytics to verify at any given time that personas are not correlatable (this should be based on a proper measure of likelihood of correlation).
+
+Another source of potential correlation that, as wallet developers, we should try to assist users to avoid is user tracking across personas through IP address or other browser tracking techniques.
+
+### Personas and protocol accounts, measuring correlation: [WIP]
+
+Once protocol accounts have been used to interact (eg. funding) with a persona account (directly with the persona key, or with its application keys, or with any protocol account already linked to that persona), they become correlated to that persona if the method used was not privacy preserving. It will also link to this persona any other protocol account that were already correlated to the one just used.
+Designing good privacy preserving practices and assisting the user to follow them is not too hard at the wallet level.
+
+However two more complex topics should be researched:
+a) Identifying pre-existing correlations:
+We need to develop a measure and analytical tools (such as clustering algorithms) that can determine whether two accounts are correlated by transactions and belong to the same user.
+For that we need to survey not only the blockchain protocol operations such as ether transfer but also the transactions on associated protocols such as ERC20 transactions that can privacy threatening too.
+Note that the measure of correlation should be a non binary one. 
+b) Allowing to store and export the list of persona / protocol accounts correlation
+
+[temporary]
+references on tracing accounts:
+-Tracing Transactions Across Cryptocurrency Ledgers
+https://smeiklej.com/files/usenix19.pdf
+-
+https://medium.com/trm-insights/how-we-used-machine-learning-to-label-one-million-ethereum-addresses-e69c96a841b9
+-
+https://towardsdatascience.com/clustering-ethereum-addresses-18aeca61919d
+
+http://cs229.stanford.edu/proj2017/final-reports/5244232.pdf
+https://caprehab.nl/medium/clustering-ethereum-addresses/
+
+https://arxiv.org/pdf/1709.02489.pdf
+
+https://www.scss.tcd.ie/publications/theses/diss/2018/TCD-SCSS-DISSERTATION-2018-027.pdf
+[temporary]
+
 
 ### Example derivation of persona accounts:
 
