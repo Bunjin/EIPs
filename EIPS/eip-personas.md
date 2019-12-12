@@ -106,12 +106,14 @@ Note that the measure of correlation should be a non binary one.
 b) Allowing to store and export the list of persona / protocol accounts correlation
 
 [temporary]
+
 references on tracing accounts:
--Tracing Transactions Across Cryptocurrency Ledgers
+
+Tracing Transactions Across Cryptocurrency Ledgers
 https://smeiklej.com/files/usenix19.pdf
--
+
 https://medium.com/trm-insights/how-we-used-machine-learning-to-label-one-million-ethereum-addresses-e69c96a841b9
--
+
 https://towardsdatascience.com/clustering-ethereum-addresses-18aeca61919d
 
 http://cs229.stanford.edu/proj2017/final-reports/5244232.pdf
