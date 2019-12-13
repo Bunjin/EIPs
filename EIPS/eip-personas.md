@@ -19,7 +19,7 @@ In this EIP we define the concept of personas, a new type of account, and propos
 
 ## Motivation
 <!--The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.-->
-EIP 1775 introduced the concept of personas: cryptographic keys (or accounts) that can be used as identities used to interact with an application (and generate its application key based on its origin) and aimed at being separated (non correlatable) from one to another. Here we further define the concept of personas and propose a standard to derive them.
+EIP 1775 introduced the concept of personas: cryptographic keys (or accounts) that can be used as identities used to interact with an application (and generate its application key based on its origin) and aimed at being separated (non correlatable) from one to another. Here we further define the concept of personas and propose a standard to derive them. These new type of accounts, both the persona accounts and the application keys derived from them, are thought to be used alongside the legacy BIP44 protocol accounts.
 
 ## Specification
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (go-ethereum, parity, cpp-ethereum, ethereumj, ethereumjs, and [others](https://github.com/ethereum/wiki/wiki/Clients)).-->
@@ -37,7 +37,7 @@ A persona key could be any 256 bit key. EIP1775 requires a private keys to gener
 
 We propose to use the BIP32 Hierarchical Deterministic specification since it is a commonly used clean framework with interesting properties for generating (extended or non extended) private / public key pairs. Even if this specification originates from the secp256k1 ECDSA world of Bitcoin, it can be used in a cryptographically agnostic fashion.
 
-However we don't want to use the same path as any existing protocol keys, such as SLIP44 paths, because using a given protocol's accounts (such as Ethereum keys) as personas roots would be incompatible with the protocol-agnostic nature of the persona keys and could lead to confusion and dangers, such as the inability to transfer an Ethereum key without transferring all of that persona's other keys, but not vice versa.
+However we don't want to use the same path as any existing protocol keys (legacy accounts), such as SLIP44 paths, because using a given protocol's accounts (such as Ethereum keys) as personas roots would be incompatible with the protocol-agnostic nature of the persona keys and could lead to confusion and dangers, such as the inability to transfer an Ethereum key without transferring all of that persona's other keys, but not vice versa.
 
 Therefore for persona keys, we use a new BIP43 purpose field in a way that can not collide with the existing BIP process of attributing new BIP43 purpose fields for the Bitcoin community. However, since BIP43 is cryptocurrency agnostic, the attribution of BIP43 purpose fields should be set outside of the BIP process (In the past several projects such as Ledger Wallet SSH and PGP, apps have used BIP43 purpose fields outside of the BIP process).
 More importantly, this proposal, being cryptocurrency or even protocol agnostic (because it englobes them all), we believe that it shouldn't be tied to any cryptocurrency (neither Bitcoin, nor Ethereum, even if this is initially proposed as an EIP). In the same way BIP44s span SLIP44 (non BIP process subjected list of BIP44 cryptocurrencies), BIP43 should generate a protocol agnostic repository for listing BIP43 purpose fields (we provide a static list at time of writing in this document).
@@ -85,7 +85,7 @@ While generating child private keys from the parent private key in the same way 
 
 ### Personas are intented to be not correlatable
 
-Personas are designed to be kept separate, and to offer the possibility of privacy between personas. Note that this is an intention, yet true unability to correlate personas would depend on usage of each of the protocols. Some protocol operations are privacy preserving, yet today sending funds on most cryptocurrencies isn't.
+Personas are designed to be kept separate, and to offer the possibility of privacy between personas. Note that this is an intention, yet true unability to correlate personas would depend on usage of each of the protocols. Some protocol operations are privacy preserving, yet today sending funds on most cryptocurrencies is not.
 
 Indeed the funding trail is something that can to different extents correlate personas together and reduce the benefit of using distinct personas. If, for instance, one uses the same Ethereum account (or different but correlatable accounts) to fund two distinct persona generated accounts, then these two personas would not preserve non-correlated privacy. With analytical tools, an application could be able to relate these two personas and know that there is a single user behind them.
 
